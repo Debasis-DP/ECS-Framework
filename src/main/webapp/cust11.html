@@ -1,0 +1,100 @@
+<html>
+   <head>
+      <title>Customer Details Form</title>
+   </head>
+   <script>  
+ 	function loadApp(value) {
+	   var xhttp = new XMLHttpRequest();
+	   //alert(value);  
+	   xhttp.onreadystatechange = function() {
+	     if (this.readyState == 4 && this.status == 200) {
+	       document.getElementById("app_server_list").innerHTML =
+	       this.responseText;
+	     }
+	   };
+	   xhttp.open("GET", "rest/services/server?val="+value, true);
+	   xhttp.send();
+ 	}
+ 	
+	function getApp() {
+		   var xhttp = new XMLHttpRequest();
+		   var x = document.getElementById("app_server_list").value;
+		   //alert(x);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		       document.getElementById("app_server_details").innerHTML =
+		       this.responseText;
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/machine?val="+x, true);
+		   xhttp.send();
+	 	}
+	function loadDB(value) {
+		   var xhttp = new XMLHttpRequest();
+		   //alert(value);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		       document.getElementById("db_server_list").innerHTML =
+		       this.responseText;
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/db?val="+value, true);
+		   xhttp.send();
+	 	}
+	function getDB() {
+		   var xhttp = new XMLHttpRequest();
+		   var x = document.getElementById("db_server_list").value;
+		   //alert(x);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		       document.getElementById("db_server_details").innerHTML =
+		       this.responseText;
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/machine?val="+x, true);
+		   xhttp.send();
+	 	}
+		
+</script>  
+   <body>
+      <h3>Customer Onboarding:</h3>
+      Fill the details of the customer: <br />
+      <form action = "rest/services/customer" method = "get" enctype = "multipart/form-data">
+        Customer Name: <input type = "text" name = "custName">
+         <br>
+         User name:
+         <input type = "text" name = "userName">
+         <br>
+         Email ID:
+         <input type="text" name="email">
+         <br>
+         App ID:
+         <input type="text" name="appId">
+         <br>
+         App Name:
+         <input type="text" name="appName">
+         <br>
+         App server type:
+         <br>
+	     <input type="radio" name="app_server" value="shared" checked onclick="loadApp(value)"> Shared Application server<br>
+		 <input type="radio" name="app_server" value="dedicated" onclick="loadApp(value)"> Dedicated Application server<br>
+		 
+		 <select id = "app_server_list" name="app_server_list" onChange="getApp()"></select>
+		 <br>
+		 <div id="app_server_details"></div>
+		 <br><br>
+		 		 
+		 DB Server type :
+		 <br>
+		 <input type="radio" name="db_server" value="shared" checked onclick="loadDB(value)"> Shared DB server<br>
+		 <input type="radio" name="db_server" value="dedicated" onclick="loadDB(value)"> Dedicated DB server<br>
+		 
+		 <select id = "db_server_list" name="db_server_list" onChange="getDB()"></select>
+		 <br>
+		 <div id="db_server_details"></div>
+		 <br><br>
+         <input type = "submit" value = "Submit">
+      </form>
+   </body>
+   
+</html>

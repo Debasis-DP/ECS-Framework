@@ -1,0 +1,49 @@
+/********** Form-Wizard **********/
+.wizard-steps {
+  display: table;
+  width: 100%;
+}
+.wizard-steps > li {
+  display: table-cell;
+  padding: 10px 20px;
+  background: #f7fafc;
+}
+.wizard-steps > li span {
+  border-radius: 100%;
+  border: 1px solid rgba(120, 130, 140, 0.13);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 9px;
+  margin-right: 8px;
+  text-align: center;
+}
+.wizard-content {
+  padding: 25px;
+  border-color: rgba(120, 130, 140, 0.13);
+  margin-bottom: 30px;
+}
+.wizard-steps > li.current,
+.wizard-steps > li.done {
+  background: #03a9f3;
+  color: #ffffff;
+}
+.wizard-steps > li.current span,
+.wizard-steps > li.done span {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.wizard-steps > li.current h4,
+.wizard-steps > li.done h4 {
+  color: #ffffff;
+}
+.wizard-steps > li.done {
+  background: #00c292;
+}
+.wizard-steps > li.error {
+  background: #03a9f3;
+}
+.wiz-aco .pager {
+  margin: 0px;
+}

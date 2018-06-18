@@ -1,0 +1,100 @@
+.input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.input-lg {
+  height: 44px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+/********** Tables **********/
+.table {
+  margin-bottom: 10px;
+}
+.table-striped > tbody > tr:nth-of-type(odd),
+.table-hover > tbody > tr:hover,
+.table > thead > tr > td.active,
+.table > tbody > tr > td.active,
+.table > tfoot > tr > td.active,
+.table > thead > tr > th.active,
+.table > tbody > tr > th.active,
+.table > tfoot > tr > th.active,
+.table > thead > tr.active > td,
+.table > tbody > tr.active > td,
+.table > tfoot > tr.active > td,
+.table > thead > tr.active > th,
+.table > tbody > tr.active > th,
+.table > tfoot > tr.active > th {
+  background-color: #f7fafc !important;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td,
+.table > thead > tr > th,
+.table-bordered {
+  border-top: 1px solid #e4e7ea;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  padding: 15px 8px;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #e4e7ea;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #e4e7ea;
+}
+tbody {
+  color: #797979;
+}
+th {
+  color: #666666;
+  font-weight: 500;
+}
+.table-bordered {
+  border: 1px solid #e4e7ea;
+}
+table.focus-on tbody tr.focused th {
+  background-color: #ff6849;
+  color: #ffffff;
+}
+table.focus-on tbody tr.focused td {
+  background-color: #ff6849;
+  color: #ffffff;
+}
+.table-rep-plugin .table-responsive {
+  border: none !important;
+}
+.table-rep-plugin tbody th {
+  font-size: 14px;
+  font-weight: normal;
+}
+.jsgrid .jsgrid-table {
+  margin-bottom: 0px;
+}
+.jsgrid-selected-row > td {
+  background: #f7fafc;
+  border-color: #f7fafc;
+}
+.jsgrid-header-row > th {
+  background: #ffffff;
+}
+.footable-odd {
+  background-color: #f7fafc;
+}

@@ -1,0 +1,80 @@
+<%
+Class.forName("com.mysql.jdbc.Driver");
+		// Connect to a database
+		Connection con= DriverManager.getConnection("jdbc:mysql://localhost/ecs","root","");
+		Statement stmt=con.createStatement();
+		String query = "SELECT * FROM cust_master WHERE cust_username ='"+user+"' AND cust_pwd='"+pass+"';";
+		ResultSet rs = stmt.executeQuery(query) ;
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ECS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css1/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css1/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css1/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css1/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css1/style.css">
+
+
+</head>
+<body>
+		<div id="fh5co-pricing-section"  style="background-image: url('images/slide_1.jpg');">
+		<div class="container">
+					<center><h1>CUSTOMER DASHBOARD</h1></center>
+					<div class="col-md-4 col-xs-8 push-xs-2 animate-box fadeInUp animated">
+						<div class="price-box">
+						
+							<div class="price"><div style="height:104px"><h3 style="margin-bottom:0px">Name</h3></div><small><b>Member-</b>Name</small></div>
+							<div style="overflow-y:auto; overflow-x: hidden;height: 20vh;"><p>Desc</p></div><br>
+							<a href="'.$tutorial['link'].'" target="_blank" class="btn btn-select-plan btn-sm">Show Tutorial</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-8 push-xs-2 animate-box fadeInUp animated">
+						<div class="price-box">
+						
+							<div class="price"><div style="height:104px"><h3 style="margin-bottom:0px">Name</h3></div><small><b>Member-</b>Name</small></div>
+							<div style="overflow-y:auto; overflow-x: hidden;height: 20vh;"><p>Desc</p></div><br>
+							<a href="'.$tutorial['link'].'" target="_blank" class="btn btn-select-plan btn-sm">Show Tutorial</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-8 push-xs-2 animate-box fadeInUp animated">
+						<div class="price-box">
+						
+							<div class="price"><div style="height:104px"><h3 style="margin-bottom:0px">Name</h3></div><small><b>Member-</b>Name</small></div>
+							<div style="overflow-y:auto; overflow-x: hidden;height: 20vh;"><p>Desc</p></div><br>
+							<a href="'.$tutorial['link'].'" target="_blank" class="btn btn-select-plan btn-sm">Show Tutorial</a>
+						</div>
+					</div>
+              			
+			</div>
+	</div>
+
+
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

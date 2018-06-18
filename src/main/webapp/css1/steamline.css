@@ -1,0 +1,61 @@
+/********** Steam line widget **********/
+.steamline {
+  position: relative;
+  border-left: 1px solid rgba(120, 130, 140, 0.13);
+  margin-left: 20px;
+}
+.steamline .sl-left {
+  float: left;
+  margin-left: -20px;
+  z-index: 1;
+  margin-right: 15px;
+}
+.steamline .sl-left img {
+  max-width: 40px;
+}
+.steamline .sl-right {
+  padding-left: 35px;
+}
+.steamline .sl-item {
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+.sl-date {
+  font-size: 10px;
+  color: #98a6ad;
+}
+.time-item {
+  border-color: rgba(120, 130, 140, 0.13);
+  padding-bottom: 1px;
+  position: relative;
+}
+.time-item:before {
+  content: " ";
+  display: table;
+}
+.time-item:after {
+  background-color: #ffffff;
+  border-color: rgba(120, 130, 140, 0.13);
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  bottom: 0;
+  content: '';
+  height: 14px;
+  left: 0;
+  margin-left: -8px;
+  position: absolute;
+  top: 5px;
+  width: 14px;
+}
+.time-item-item:after {
+  content: " ";
+  display: table;
+}
+.item-info {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+.item-info p {
+  margin-bottom: 10px !important;
+}

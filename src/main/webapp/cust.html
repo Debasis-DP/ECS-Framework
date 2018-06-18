@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ECS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+	width: 100%;
+	color: white;
+    padding: 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+	float: middle;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 50%;
+    margin-top: 25px;
+}
+
+.col-75 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+</head>
+<script>  
+ 	function loadApp(value) {
+	   var xhttp = new XMLHttpRequest();
+	   //alert(value);  
+	   xhttp.onreadystatechange = function() {
+	     if (this.readyState == 4 && this.status == 200) {
+	       document.getElementById("app_server_list").innerHTML =
+	       this.responseText;
+	     }
+	   };
+	   xhttp.open("GET", "rest/services/server?val="+value, true);
+	   xhttp.send();
+ 	}
+ 	
+	function getApp() {
+		   var xhttp = new XMLHttpRequest();
+		   var x = document.getElementById("app_server_list").value;
+		   //alert(x);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		    	 //console.log(document.getElementById("app_server_details").innerHTML);
+		    	 document.getElementById("app_server_details").innerHTML =
+		       this.responseText;
+		       //alert(this.responseText);
+		       //console.log(document.getElementById("app_server_details").innerHTML);
+		       
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/machine?val="+x, true);
+		   xhttp.send();
+	 	}
+	function loadDB(value) {
+		   var xhttp = new XMLHttpRequest();
+		   //alert(value);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		       document.getElementById("db_server_list").innerHTML =
+		       this.responseText;
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/db?val="+value, true);
+		   xhttp.send();
+	 	}
+	function getDB() {
+		   var xhttp = new XMLHttpRequest();
+		   var x = document.getElementById("db_server_list").value;
+		   //alert(x);  
+		   xhttp.onreadystatechange = function() {
+		     if (this.readyState == 4 && this.status == 200) {
+		       document.getElementById("db_server_details").innerHTML =
+		       this.responseText;
+		     }
+		   };
+		   xhttp.open("GET", "rest/services/machine?val="+x, true);
+		   xhttp.send();
+	 	}
+		
+</script>  
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<a href="adminHome.html">
+			<button class="login100-form-btn" style="position:absolute; top:0;left:0;">Admin Home</button>
+		</a>
+			<div>
+				<span class="login100-form-title p-b-41">
+					Customer Details
+				</span>
+				<form action="rest/services/customer" method="get" enctype="multipart/form-data">
+					<div class="row">
+					  <div class="col-25">
+						<label for="fname" >Name</label>
+					  </div>
+					  <div class="col-75">
+						<input type="text" id="fname" name="custName" placeholder="Your name..">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="uname">User Name</label>
+					  </div>
+					  <div class="col-75">
+						<input type="text" id="uname" name="userName" placeholder="Your User name..">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="mail">Email ID</label>
+					  </div>
+					  <div class="col-75">
+						<input type="text" id="mail" name="email" placeholder="Your Email ID..">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="appid">App ID</label>
+					  </div>
+					  <div class="col-75">
+						<input type="text" id="appid" name="appId" placeholder="App ID..">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="appname">App Name</label>
+					  </div>
+					  <div class="col-75">
+						<input type="text" id="appname" name="appName" placeholder="App Name..">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="aservertype">App Server Type</label>
+					  </div>
+					  <div class="col-75">
+						<select id="app_server" name="app_server" onchange="loadApp(this.value)">
+						  <option value="">Select from below</option>
+						  <option value="shared">Shared</option>
+						  <option value="dedicated">Dedicated</option>
+						</select>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="aservertype">Available App Servers</label>
+					  </div>
+					  <div class="col-75">
+						<select id="app_server_list" name="app_server_list" onChange="getApp()">
+						  
+						</select>
+					  </div>
+					  <div class="col-25">
+						<label id="app_server_details">App Server details</label>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="dbservertype">DB Server Type</label>
+					  </div>
+					  <div class="col-75">
+						<select id="db_server" name="db_server" onchange="loadDB(this.value)">
+						  <option value="">Select from below</option>
+						  <option value="shared">Shared</option>
+						  <option value="dedicated">Dedicated</option>
+						</select>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-25">
+						<label for="dservertype">Available DB Servers</label>
+					  </div>
+					  <div class="col-75">
+						<select id="db_server_list" name="db_server_list" onChange="getDB()">
+						  
+						</select>
+					  </div>
+					  <div class="col-25">
+						<label  id="db_server_details">DB Server details</label>
+					  </div>
+					</div>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Submit
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

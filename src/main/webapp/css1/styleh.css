@@ -1,0 +1,78 @@
+/* --- Made by Soham Bhattacharya --- */
+
+
+
+.contained {
+  margin: 0 auto;
+  width: 90%;
+}
+@media (min-width: 500px) {
+  .contained {
+    width: 80%;
+  }
+}
+@media (min-width: 600px) {
+  .contained {
+    width: 60%;
+  }
+}
+
+main {
+  padding: 1em 0;
+  position: relative;
+  background: #f5f5f5;
+  
+}
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+#logo:after {
+  content:"Help";
+  position: absolute;
+  left: 3px;
+  top: 20px;
+}
+#logo:after {
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
+/* --- Important Pen Styles --- */
+
+
+header img {
+  width: 100%;
+  max-width: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.bull li {
+  color:#444; 
+  list-style:none; 
+}
+
+.bull li:before {
+  color:#ed0000; 
+  content:"\2022"; 
+  font-size:2.5em; 
+  padding-right:.25em; 
+  position:relative;
+    top:.1em; 
+}
